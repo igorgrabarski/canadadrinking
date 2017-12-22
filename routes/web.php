@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $lcbo = new igorgrabarski\LCBO();
+
+    return var_dump($lcbo->getStores());
 });
