@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    $lcbo = new igorgrabarski\LCBO();
+use igorgrabarski\LCBO;
 
-    return var_dump($lcbo->getStores());
+Route::get('/', function () {
+    $lcbo = new LCBO();
+
+    $stores = $lcbo->getStores(1,50, null,null,null,null,null,null,null,'n6g5e4');
+
+    return view('welcome', ['stores' => $stores]);
 });
