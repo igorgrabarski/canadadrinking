@@ -46,6 +46,7 @@
             '<hr>Total volume: <em>' + '{{ $store->getInventoryVolumeInMilliliters()/ 100 }}' + ' litres</em>' +
             '<br>Total items: <em>' + '{{ $store->getInventoryCount()  }}' + ' pcs.</em>' +
             '<br>Total price: <em>$' + '{{ $store->getInventoryPriceInCents() / 100 }}' + '</em>' +
+            '<br>Last update: <em>' + '{{ date_format($store->getUpdatedAt(), 'd-m-Y H:m')}}' + '</em>' +
             '<hr>' +
             '<img src="{{ $store->getHasWheelchairAccessability() ? asset('images/wheelchair.png') : asset('images/unavailable.png')  }}" alt="Wheelchair access available" title="Wheelchair access available"/>' +
             '<img src="{{ $store->getHasBeerColdRoom() ? asset('images/room.png') : asset('images/unavailable.png')  }}" alt="Beer cold room" title="Beer cold room"/>' +
