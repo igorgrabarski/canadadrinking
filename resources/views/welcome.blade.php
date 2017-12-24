@@ -44,8 +44,20 @@
             '<br>' + '{{ $store->getCity()  }}' + '<br>' + '{{ $store->getTelephone()  }}' +
             '<hr>Total volume: <em>' + '{{ $store->getInventoryVolumeInMilliliters()/ 100 }}' + ' litres</em>' +
             '<br>Total items: <em>' + '{{ $store->getInventoryCount()  }}' + ' pcs.</em>' +
-            '<br>Total price: <em>$' + '{{ $store->getInventoryPriceInCents() / 100 }}' + '</em>'
+            '<br>Total price: <em>$' + '{{ $store->getInventoryPriceInCents() / 100 }}' + '</em>' +
+            '<hr>' +
+            '<img src="{{ $store->getHasWheelchairAccessability() ? asset('images/wheelchair.png') : asset('images/unavailable.png')  }}" alt="Wheelchair access available" title="Wheelchair access available"/>' +
+            '<img src="{{ $store->getHasBeerColdRoom() ? asset('images/room.png') : asset('images/unavailable.png')  }}" alt="Beer cold room" title="Beer cold room"/>' +
+            '<img src="{{ $store->getHasVintagesCorner() ? asset('images/vintage.png') : asset('images/unavailable.png')  }}" alt="Vintage corner" title="Vintage corner"/>' +
+            '<img src="{{ $store->getHasParking() ? asset('images/parking.png') : asset('images/unavailable.png')  }}" alt="Parking" title="Parking"/>' +
+            '<img src="{{ $store->getHasProductConsultant() ? asset('images/consultant.png') : asset('images/unavailable.png')  }}" alt="Consultant" title="Consultant"/>' +
+            '<img src="{{ $store->getHasSpecialOccasionPermits() ? asset('images/permit.png') : asset('images/unavailable.png')  }}" alt="Special occasion permits" title="Special occasion permits"/>' +
+            '<img src="{{ $store->getHasTastingBar() ? asset('images/tasting.png') : asset('images/unavailable.png')  }}" alt="Tasting bar" title="Tasting bar"/>' +
+            '<img src="{{ $store->getHasTransitAccess() ? asset('images/transit.png') : asset('images/unavailable.png')  }}" alt="Transit access" title="Transit access"/>' +
+            '<img src="{{ $store->getHasBilingualServices() ? asset('images/language.png') : asset('images/unavailable.png')  }}" alt="Bilingual services" title="Bilingual services"/>'
+
         });
+
 
         infoWindows.push({{ 'infowindow' . $store->getId()  }});
 
