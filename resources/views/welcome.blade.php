@@ -40,8 +40,9 @@
         // Infowindows creation
         var {{ 'infowindow' . $store->getId()  }} =
         new google.maps.InfoWindow({
-            content: '<b>' + '{{ $store->getName()  }}' + '</b><br>' + '{{ $store->getAddressLine1() }}' +
-            '<br>' + '{{ $store->getCity()  }}' + '<br>' + '{{ $store->getTelephone()  }}' +
+            content: '<b>' + '{{ $store->getName()  }}' + ' (Branch ' + '{{ $store->getId()  }}' + ')' + '</b><hr>' +
+            '{{ $store->getAddressLine1() }}' +
+            '<br>' + '{{ $store->getCity() . " " . $store->getPostalCode() }}' + '<br>' + '{{ $store->getTelephone()  }}' +
             '<hr>Total volume: <em>' + '{{ $store->getInventoryVolumeInMilliliters()/ 100 }}' + ' litres</em>' +
             '<br>Total items: <em>' + '{{ $store->getInventoryCount()  }}' + ' pcs.</em>' +
             '<br>Total price: <em>$' + '{{ $store->getInventoryPriceInCents() / 100 }}' + '</em>' +
